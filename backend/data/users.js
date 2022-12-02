@@ -1,4 +1,5 @@
-import bcrypt from 'bcryptjs'
+const bcrypt =require('bcryptjs')
+const { use } = require('../routes/productRoutes')
 
 const users = [
   {
@@ -19,4 +20,4 @@ const users = [
   },
 ]
 
-export default users
+module.exports =  { users:use}

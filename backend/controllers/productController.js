@@ -1,5 +1,5 @@
-import asyncHandler from 'express-async-handler'
-import Product from '../models/productModel.js'
+const asyncHandler = require('express-async-handler');
+const Product = require('../models/productModel.js');
 
 // @desc    Fetch all products
 // @route   GET /api/products
@@ -157,12 +157,12 @@ const getTopProducts = asyncHandler(async (req, res) => {
   res.json(products)
 })
 
-export {
-  getProducts,
-  getProductById,
-  deleteProduct,
-  createProduct,
-  updateProduct,
-  createProductReview,
-  getTopProducts,
-}
+module.exports = {
+  getProducts: getProducts,
+  getProductById: getProductById,
+  deleteProduct: deleteProduct,
+  createProduct: createProduct,
+  updateProduct: updateProduct,
+  createProductReview: createProductReview,
+  getTopProducts: getTopProducts,
+};
