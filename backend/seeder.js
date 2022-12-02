@@ -1,14 +1,13 @@
 const dotenv = require('dotenv');
 const users =require('./data/users.js');
 const products = require('./data/products.js');
-const User = require('./models/userModel.js');
-const Product = require( './models/productModel.js');
-const Order = require(  './models/orderModel.js');
-const connectDB = require(  './config/db.js')
+const {User} = require('./models/userModel.js');
+const {Product} = require('./models/productModel.js');
+const {Order} = require( './models/orderModel.js');
+const connectDB = require( './config/db.js')
 
 dotenv.config()
 
-connectDB()
 
 const importData = async () => {
   try {
@@ -26,10 +25,9 @@ const importData = async () => {
 
     await Product.insertMany(sampleProducts)
 
-    console.log('Data Imported!'.green.inverse)
     process.exit()
   } catch (error) {
-    console.error(`${error}`.red.inverse)
+    console.log({error});
     process.exit(1)
   }
 }
