@@ -18,6 +18,7 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
+import StreamHomeScreen from './screens/StreamHomeScreen'
 
 const App = () => {
   return (
@@ -55,7 +56,8 @@ const App = () => {
             component={HomeScreen}
             exact
           />
-          <Route path='/' component={HomeScreen} exact />
+          <Route path='/shopping' component={HomeScreen} exact />
+          <Route path='/' component={StreamHomeScreen} exact/>
         </Container>
       </main>
       <Footer />
